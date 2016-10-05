@@ -23,10 +23,10 @@ public class ReadMessageQueueServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	 // Inject the connectionFactory using annotations
-	 .. . .
+	 
 	 private ConnectionFactory tiwconnectionfactory;
 	 // Inject the queue using annotations
-	 . . . 
+	 
 	 private Queue queue;
 	 
 	 
