@@ -1,29 +1,42 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<META http-equiv="Content-Style-Type" content="text/css">
-<META name="GENERATOR" content="IBM WebSphere Studio">
-<TITLE>SendMenssageToQueue.html</TITLE>
-</HEAD>
-<BODY bgcolor="#99ffff">
-<P><FONT color="#ff0000">
-<h1>(Computer Technologies for the Web)<BR>
-Send and read messages</h1>
-</FONT></P>
-<FORM NAME="miForm", method="POST" action="SendMessageQueue.html">
-<FONT color="#0000ff" face="Times New Roman"><BR>
-<BR>
-Message</FONT>: <TEXTAREA rows="2" cols="64" name="message"></TEXTAREA><BR>
-<BR>
-<INPUT type="submit" name="enviar" value="Send message to queue"></FORM>
-<P><BR>
-<A href="ReadMessageQueue.html">Read Messages in Queue</A>
-<BR>
-<BR>
-<A href="ReadMessageQueueBrowser.html">Read Messages in Browser Mode</A><BR>
-<BR>
-<A href="index.html">Go back</A>
-</P>
-</BODY>
-</HTML>
+<!DOCTYPE html">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SendMenssageToQueue.html</title>
+	<style>
+		body {
+			background-color: "#99ffff";
+		}
+		
+		p .message {
+			color: "#0000ff";
+			font-family: "Times	New	Roman"
+		}
+		
+		input .message {
+			rows: "2";
+			cols: "64";
+		}
+	</style>
+</head>
+<body>
+	
+	<h1 style="color: #ff0000">
+		(Computer Technologies for the Web)<br> Send and read messages
+	</h1>
+
+	
+	<form name="miForm" method="post" action="SendMessageQueue.html">
+		<br>
+		<p class="message">Message:</p>
+		<textarea class="message" name="message"></textarea>
+		<br> <br> <input type="submit" name="enviar"
+			value="Send message to queue">
+	</form>
+	<p>
+		<br> <a href="ReadMessageQueue.html">Read Messages in Queue</a> <br>
+		<br> <a href="ReadMessageQueueBrowser.html">Read Messages in
+			Browser Mode </a><br> <br> <a href="index.html">Go back</a>
+	</p>
+</body>
+</html>

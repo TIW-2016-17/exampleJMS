@@ -7,12 +7,13 @@ import java.io.PrintWriter;
 
 import javax.annotation.Resource;
 import javax.jms.ConnectionFactory;
-
+import javax.jms.JMSException;
 import javax.jms.Queue;
 import javax.jms.Connection;
 import javax.jms.Session;
 import javax.jms.MessageProducer;
 import javax.jms.TextMessage;
+import javax.jms.TopicSession;
 
 /**
  * Servlet implementation class SendMessageQueueServlet
@@ -27,7 +28,7 @@ public class SendMessageQueueServlet extends HttpServlet {
 	@Resource
 	private ConnectionFactory tiwconnectionfactory;
 	// Inject the queue using annotations
-
+	@Resource(mappedName="tiwqueue")
 	private Queue queue;
 
 	/**
@@ -47,7 +48,7 @@ public class SendMessageQueueServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head><title>Sending message to a queue</title></head>");
 		out.println("<body>");
-		out.println("<h1><em>Sending the message</em></h1>");
+		out.println("<h1><u>Sending the message</u></h1>");
 
 		try {
 
@@ -56,7 +57,7 @@ public class SendMessageQueueServlet extends HttpServlet {
 			try (Connection connection = tiwconnectionfactory.createConnection()) {
 				// Next create the session. Indicate that transaction will not
 				// be supported
-				try (Session session = connection.createSession(false, javax.jms.TopicSession.AUTO_ACKNOWLEDGE);) {
+				try (Session session = connection.createSession(false, TopicSession.AUTO_ACKNOWLEDGE);) {
 
 					// Now use the session to create a message producer
 					// associated to the queue
@@ -73,7 +74,6 @@ public class SendMessageQueueServlet extends HttpServlet {
 						textMessage.setText(request.getParameter(MESSAGE_PARAMETER));
 
 						// Use the message producer to send the message
-						// messageProducer.send(textMessage);
 
 						messageProducer.send(textMessage);
 
@@ -85,7 +85,7 @@ public class SendMessageQueueServlet extends HttpServlet {
 
 			out.println(" Menssage sent </br>");
 
-		} catch (javax.jms.JMSException e) {
+		} catch (JMSException e) {
 			System.out.println("JHC *************************************** Error in doPost: " + e);
 			System.out.println(
 					"JHC *************************************** Error MQ: " + e.getLinkedException().getMessage());
@@ -99,7 +99,7 @@ public class SendMessageQueueServlet extends HttpServlet {
 
 		}
 
-		out.println(" >>>>>>  <a href=\"SendMessageToQueue.html\">Back</a></P>");
+		out.println(" >>>>>>  <a href=\"SendMessageToQueue.html\">Back</a></p>");
 		out.println("</body></html>");
 	}
 
