@@ -6,9 +6,6 @@ import java.io.PrintWriter;
 import javax.annotation.Resource;
 import javax.jms.ConnectionFactory;
 import javax.jms.Message;
-import javax.jms.Queue;
-import javax.jms.Session;
-import javax.jms.TextMessage;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,11 +20,11 @@ public class ReadMessageQueueServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	 // Inject the connectionFactory using annotations
-	 
+	@Resource
 	 private ConnectionFactory tiwconnectionfactory;
 	 // Inject the queue using annotations
 	 
-	 private Queue queue;
+	 //private Queue queue;
 	 
 	 
     /**
