@@ -28,7 +28,7 @@ public class ReadMessageQueueServlet extends HttpServlet {
 	@Resource
 	private ConnectionFactory tiwconnectionfactory;
 	// Inject the queue using annotations
-
+	@Resource(mappedName = "tiwqueue")
 	private Queue queue;
 
 	/**
