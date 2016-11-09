@@ -10,14 +10,18 @@
     - Make sure ‘enabled’ is checked The Resource Type drop-down menu has three options:
       - javax.jms.TopicConnectionFactory - used to create a connection factory that creates JMS topics for JMS clients using the pub/sub messaging domain
       - javax.jms.QueueConnectionFactory - used to create a connection factory that creates JMS queues for JMS clients using the PTP messaging domain
-      - javax.jms.ConnectionFactory - used to create a connection factory that creates either JMS topics or JMS queues You can select javax.jms.ConnectionFactory
+      - javax.jms.ConnectionFactory - used to create a connection factory that creates either JMS topics or JMS queues 
+      
+      You can select javax.jms.ConnectionFactory
 
+    ![](images/img1.PNG)
+    
   3. Set up a JMS Message Queue / JMS Message Topic
     - Resources > JMS Resources > Destination Resources > click ‘New’
       - Make sure ‘enabled’ is checked
       
     The resource type must be queue or topic depending on the type of queue you aim to create.
-    
+    ![](images/img2.PNG)
 2. Complete the servlets of the project example:
   1. SendMessageQueueServlet: sends to a queue a message receives in a parameter “message”of the request
   2. ReadMessageQueueServlet: reads the messages in the queue and shows them on screen
